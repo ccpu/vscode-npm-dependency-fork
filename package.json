@@ -73,7 +73,7 @@
     "vscode": "^1.1.37"
   },
   "dependencies": {
-    "axios-https-proxy-fix": "^0.17.1",
+    "axios": "^1.7.9",
     "semver": "^7.6.3",
     "url-parse": "^1.5.10"
   }

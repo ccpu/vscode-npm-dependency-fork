@@ -1,6 +1,4 @@
-import axios, { AxiosPromise, AxiosError, AxiosRequestConfig } from 'axios-https-proxy-fix'
-import * as vscode from 'vscode'
-import * as semver from 'semver'
+import axios, { AxiosError, AxiosRequestConfig } from 'axios'
 
 import { Package, Dependencies } from '../models'
 import { isLatest, isScoped, getRegistry, getProxyForAxios, isValidVersion } from '../helper/util'
@@ -14,7 +12,7 @@ export function fetchPkg(name: string, version: string): Promise<Package> {
   return new Promise<Package>((resolve, reject) => {
     axios
       .get(url, axiosConfig as AxiosRequestConfig)
-      .then(response => resolve(response.data))
+      .then((response) => resolve(response.data))
       .catch((err: AxiosError) => {
         if (!err.response) {
           return reject(new Error(err.message))
@@ -34,9 +32,9 @@ export function fetchPkg(name: string, version: string): Promise<Package> {
 }
 
 export function fetchPkgs(depends: Dependencies): Promise<Array<Package>> {
-  const names: Array<string> = Object.keys(depends).filter(d => isValidVersion(depends[d]))
+  const names: Array<string> = Object.keys(depends).filter((d) => isValidVersion(depends[d]))
 
-  return Promise.all(names.map(name => fetchPkg(name, depends[name])))
+  return Promise.all(names.map((name) => fetchPkg(name, depends[name])))
 }
 
 function getInfoAddress(name: string): string {
