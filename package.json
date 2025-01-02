@@ -1,6 +1,6 @@
 {
-  "name": "vscode-npm-dependency",
-  "displayName": "Npm Dependency",
+  "name": "vscode-npm-dependency-fork",
+  "displayName": "Npm Dependency Fork",
   "description": "Update dependencies/devDependencies for specific package.json",
   "version": "1.2.2",
   "publisher": "howardzuo",
@@ -68,13 +68,13 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^10.12.12",
-    "typescript": "^3.2.2",
-    "vscode": "^1.1.10"
+    "@types/node": "^22.10.3",
+    "typescript": "^5.7.2",
+    "vscode": "^1.1.37"
   },
   "dependencies": {
     "axios-https-proxy-fix": "^0.17.1",
-    "semver": "^5.6.0",
-    "url-parse": "^1.4.4"
+    "semver": "^7.6.3",
+    "url-parse": "^1.5.10"
   }
 }
